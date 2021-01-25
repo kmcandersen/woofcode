@@ -7,27 +7,28 @@ const celsiusToFahrenheit = (c) => {
 const f = celsiusToFahrenheit(100);
 console.log(f);
 
+const currYear = new Date().getFullYear();
+
 const getAgeFromUser = () => {
-    const age = prompt("What is your current age?");
+    const age = prompt(`The age I'll turn in ${currYear}:`);
     return age;
 }
 
 // const calculateAgeIn2050 = () => {
 //     const currAge = Number(getAgeFromUser());
 //     const futureAge = currAge + 29;
-//     alert(`In 2050, you will be ${futureAge} years old!`);
+//     alert(`In 2050, you will turn ${futureAge}!`);
 // }
 
 // calculateAgeIn2050();
 
 const calculateAgeInYear = (futureYear) => {
     const currAge = Number(getAgeFromUser());
-    const currYear = new Date().getFullYear();
     // futureYear (prompt input) cast as Number:
     const yearDiff = futureYear - currYear;
     const futureAge = currAge + yearDiff;
-    alert(`In ${futureYear}, you will be ${futureAge} years old`);
+    alert(`In ${futureYear}, you will turn ${futureAge}!`);
 }
 
-const inputYear = prompt("For what year do you want to calculate your age?");
+const inputYear = prompt("Calculate my age in the year:");
 calculateAgeInYear(inputYear);
