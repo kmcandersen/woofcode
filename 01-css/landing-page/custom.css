@@ -1,0 +1,333 @@
+:root {
+  --maroon: rgb(183, 16, 16);
+  /* for button bg */
+  --maroon-bright: rgb(246, 182, 182);
+  /* box bg image */
+  --maroon-overlay: rgba(183, 16, 16, 0.7);
+  --maroon-dark: rgb(158, 15, 15);
+  /* box bg image:hover */
+  --maroon-dark-overlay: rgba(158, 15, 15, 0.7);
+  /* box button:hover */
+  --maroon-dark-border: rgb(100, 8, 8);
+  --gold: rgb(244, 190, 49);
+
+  --gold-overlay: rgba(244, 190, 49, 0.7);
+  --gold-dark: rgb(218, 169, 44);
+  --gold-dark-overlay: rgba(218, 169, 44, 0.7);
+  --gold-dark-border: rgb(179, 138, 36);
+  --pink: rgb(234, 153, 153);
+  --pink-bright: rgb(230, 164, 164);
+  --pink-overlay: rgba(234, 153, 153, 0.6);
+  --pink-dark: #df9393;
+  --pink-border: rgb(200, 105, 105);
+  --pink-dark-border: #ad7070;
+  --pink-text-color: rgb(101, 67, 67);
+  --white: #ffffff;
+  --gray-light-bg: #eeeeee;
+  --dark-gray-2: rgb(82, 82, 82);
+  --dark-gray-1: rgb(43, 42, 42);
+}
+
+/* * {
+  border: 1px solid red;
+} */
+
+body {
+  color: var(--dark-gray-2);
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+  font-family: "Playfair Display", serif;
+}
+
+h2,
+h3 {
+  font-style: italic;
+}
+
+.name-wine {
+  font-style: italic;
+  color: var(--maroon-dark);
+}
+
+.name-shop {
+  color: var(--gold-dark);
+}
+
+/* NAV */
+
+.navbar-brand {
+  font-size: 2.3rem;
+  /* for svg:
+  display: flex;
+  align-items: center; */
+}
+
+.navbar-brand a {
+  text-decoration: none;
+}
+
+.navbar-brand span {
+  position: relative;
+  top: -3px;
+}
+
+nav li {
+  margin-left: 15px;
+}
+
+img[src$=".svg"] {
+  padding-right: 5px;
+}
+
+/* JUMBOTRON */
+
+.jumbotron_boxes--row,
+.featured_cards--row {
+  padding: 2rem 0;
+}
+
+.jumbotron_boxes--box {
+  height: 200px;
+  margin: 0 auto;
+}
+
+#box--slogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--dark-gray-1);
+}
+
+h1 span {
+  font-size: 3rem;
+}
+
+h2.jumbotron-slogan {
+  font-size: 1.2rem;
+}
+
+#box--red {
+  background-color: var(--maroon);
+  background-image: linear-gradient(
+      var(--maroon-overlay),
+      var(--maroon-overlay)
+    ),
+    url("img/grapes-on-table.jpg");
+  background-size: cover;
+}
+
+#box--white {
+  background-color: var(--gold);
+  background-image: linear-gradient(var(--gold-overlay), var(--gold-overlay)),
+    url("img/bottles-on-shelf.jpg");
+  background-size: cover;
+}
+
+#box--rose {
+  /* background-color: var(--pink-overlay); */
+  background-image: linear-gradient(var(--pink-overlay), var(--pink-overlay)),
+    url("img/wine-glasses.jpg");
+  background-size: cover;
+  background-position: center 40%;
+}
+
+.jumbotron-btn {
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 175px;
+  height: 65px;
+  border-width: 2px;
+  transition: all 0.7s ease;
+}
+
+.jumbotron-btn:hover {
+  opacity: 0.85;
+}
+
+#btn--red {
+  background-color: var(--maroon);
+  border-color: var(--maroon-dark);
+}
+
+#btn--red:hover,
+#btn--red:focus {
+  background-color: var(--maroon-dark);
+  border-color: var(--maroon-dark-border);
+}
+
+#btn--white {
+  background-color: var(--gold);
+  border-color: var(--gold-dark);
+}
+
+#btn--white:hover,
+#btn--white:focus {
+  background-color: var(--gold-dark);
+  border-color: var(--gold-dark-border);
+}
+
+#btn--rose {
+  background-color: var(--pink);
+  color: var(--white);
+  border-color: var(--pink-border);
+}
+
+#btn--rose:hover,
+#btn--rose:focus {
+  background-color: var(--pink-dark);
+  border-color: var(--pink-dark-border);
+}
+
+/* FEATURED (CARDS) */
+
+h3 {
+  font-size: 2rem;
+  margin: 5rem 0 3.5rem;
+}
+
+.card {
+  margin: 10px 20px;
+  border-top-width: 7px;
+}
+
+.card_image {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card a {
+  color: inherit;
+  font-weight: bold;
+}
+
+.card_image {
+  display: flex;
+  justify-content: center;
+}
+
+.card-img,
+.card-img-bottom,
+.card-img-top {
+  width: 20%;
+}
+
+h4.card-title {
+  font-size: 1.1rem;
+}
+
+.card-body {
+  background-color: var(--gray-light-bg);
+}
+
+/* FOOTER LISTS */
+
+.footer_nav {
+  background-color: var(--dark-gray-2);
+  color: var(--white);
+  margin-top: 80px;
+}
+
+/* these (and cards) should have anchor tags */
+.footer_nav--list p:hover,
+.footer_info p:hover {
+  opacity: 85%;
+}
+
+.footer_info p:first-child:hover {
+  opacity: 100%;
+}
+
+.footer_nav--list {
+  padding: 25px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.footer_nav--list > p {
+  margin-bottom: 25px;
+}
+.footer_nav--list > p:last-child {
+  margin-bottom: 0px;
+}
+
+.footer_info {
+  text-align: center;
+  padding: 20px 0 30px;
+}
+
+.footer_info > p {
+  margin: 10px;
+  font-size: 0.9rem;
+}
+
+.footer_info > p:first-child {
+  text-transform: uppercase;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 992px) {
+  .card {
+    margin: 0 5px;
+  }
+}
+
+/* @media (min-width: 768px) and (max-width: 991px) { */
+/* @media (min-width: 576px) and (max-width: 991px) { */
+@media (min-width: 576px) and (max-width: 767px) {
+  .card {
+    margin: 0;
+  }
+  .featured-cards--container > .row {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .jumbotron_boxes--row,
+  .featured_cards--row {
+    padding: 4rem 0 2rem;
+  }
+  .jumbotron-boxes--box {
+    width: 50%;
+  }
+
+  .footer_nav--list {
+    column-count: 2;
+    width: 500px;
+    margin: 0 auto;
+  }
+  .footer_info {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 20px;
+  }
+  .footer_info > p {
+    margin: 10px 30px;
+  }
+}
+
+/* < 576: cards at 100% width */
+@media (min-width: 576px) {
+  nav > .container-fluid {
+    padding: 0 20px;
+  }
+  .jumbotron_boxes--row,
+  .featured_cards--row {
+    width: 90%;
+  }
+  .jumbotron_boxes--box {
+    height: 250px;
+  }
+  .card-img,
+  .card-img-bottom,
+  .card-img-top {
+    width: 30%;
+  }
+}

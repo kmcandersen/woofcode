@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="custom.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <div class="navbar-brand" href="#">
+                    <a href="#">
+                        <span class="name-wine">wine</span><span class="name-shop">shop</span>
+                    </a>
+                    <!-- <img src="img/grapes-2.svg" style="width: 30px; height: 30px" alt=""> -->
+                </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">                    
+                    <a class="nav-link active d-flex align-items-center" aria-current="page" href="#"><img src="img/house-door-icon.svg" alt="">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="#"><img src="img/cart2-icon.svg" alt="">Cart</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center" href="#"><img src="img/search-icon.svg" alt="">Search</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <section class="jumbotron">
+              <div class="container md-8 jumbotron_boxes--container">
+                  <div class="row col-md-2 jumbotron_boxes--row m-auto">
+                      <div class="col-md-6 jumbotron_boxes--box text-center" id="box--slogan">
+                        
+                          <h1>Welcome to<br><span class="name-wine">wine</span><span class="name-shop">shop</span></h1>
+                          <h2 class="jumbotron-slogan mt-3">Find and buy your next favorite wine.</h2>
+                     
+                      </div>
+                      <div class="col-md-6 jumbotron_boxes--box d-flex justify-content-center align-items-center" id="box--red">
+                          <button class="btn btn-outline-primary jumbotron-btn" id="btn--red">Shop Reds</button>
+                      </div>
+                      <div class="col-md-6 jumbotron_boxes--box d-flex justify-content-center align-items-center" id="box--white">
+                        <button class="btn btn-outline-primary jumbotron-btn" id="btn--white">Shop Whites</button>
+                      </div>
+                      <div class="col-md-6 jumbotron_boxes--box d-flex justify-content-center align-items-center" id="box--rose">
+                        <button class="btn btn-outline-primary jumbotron-btn" id="btn--rose">Shop Rosés</button>
+                      </div>
+                  </div>
+              </div>
+          </section>
+          <section class="featured">
+            
+            <h3 class="text-center">Wonderful Winter Wines</h3>
+             <div class="container-md featured-cards--container">
+                <!--<div class="row col-sm-2 col-md-3 featured-cards--row m-auto"> -->
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+                        <div class="col">
+                          <div class="card h-100" style="border-top-color: rgb(183, 16, 16)">
+                              <div class="card_image">
+                                <img src="img/wine-red-0.png" class="card-img-top" alt="bottle photo">
+                              </div>
+                              <div class="card-body">
+                                <h4 class="card-title">Elizabeth Spencer Cabernet Sauvignon (Special Cuvée)</h4>
+                                <p class="card-text">$40</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100" style="border-top-color: rgb(183, 16, 16)">
+                                <div class="card_image">
+                                  <img src="img/wine-red-1.png" class="card-img-top" alt="bottle photo">
+                                </div>
+                                <div class="card-body">
+                                  <h4 class="card-title">Hartford Court Pinot Noir</h4>
+                                  <p class="card-text">$28</p>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100" style="border-top-color: rgb(244, 190, 49)">
+                                <div class="card_image">
+                                  <img src="img/wine-white-0.png" class="card-img-top" alt="bottle photo">
+                                </div>
+                                <div class="card-body">
+                                  <h4 class="card-title">Merry Edwards Sauvignon Blanc</h4>
+                                  <p class="card-text">$37</p>
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100" style="border-top-color: rgb(244, 190, 49)">
+                                <div class="card_image">
+                                  <img src="img/wine-white-1.png" class="card-img-top" alt="bottle photo">
+                                </div>
+                                <div class="card-body">
+                                  <h4 class="card-title">Grgich Hills Chardonnay</h4>
+                                  <p class="card-text">$25</p>
+                              </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            <!-- </div> -->             
+          </section>
+          <section class="footer_nav">
+                <div class="footer_nav--list">
+                    <p>About Us</p>
+                    <p>Shipping Guide</p>
+                    <p>Returns & Exchanges</p>
+                    <p>Customer Service</p>                   
+                </div>
+          </section>
+          <footer>
+              <div class="footer_info">
+                  <p>© Wineshop. All rights reserved.</p>
+                  <p>Terms & Conditions</p>
+                  <p>Privacy policy</p>
+              </div>
+          </footer>
+
+        
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    </body>
+</html>

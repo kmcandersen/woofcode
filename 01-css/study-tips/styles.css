@@ -1,0 +1,33 @@
+:root {
+  --brown: #b32321;
+  --cream: #f9fad5;
+}
+
+body {
+  background-color: var(--cream);
+}
+
+h1 {
+  background-color: var(--brown);
+  color: white;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: var(--brown);
+  font-size: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.wrong {
+  color: var(--brown);
+  font-weight: bold;
+}
+
+.citation {
+  text-align: right;
+}
+/* 
+.tips {
+  margin-top: 2rem;
+} */
