@@ -23,6 +23,7 @@ const getAgeFromUser = () => {
 const calculateAgeInYear = (futureYear) => {
     const currAge = Number(getAgeFromUser());
     const currYear = new Date().getFullYear();
+    // futureYear (prompt input) cast as Number:
     const yearDiff = futureYear - currYear;
     const futureAge = currAge + yearDiff;
     alert(`In ${futureYear}, you will be ${futureAge} years old`);
