@@ -22,11 +22,16 @@ class App extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    // form req when state change dep on existing state
-    this.setState((prevState) => ({
+    // form req when state change dep on existing state: https://reactjs.org/docs/state-and-lifecycle.html
+    // this.setState((prevState) => ({
+    //   tasks: [...this.state.tasks, this.state.task],
+    //   task: { id: 0, text: '' },
+    //   idCounter: prevState.idCounter + 1,
+    // }));
+    this.setState(() => ({
       tasks: [...this.state.tasks, this.state.task],
       task: { id: 0, text: '' },
-      idCounter: prevState.idCounter + 1,
+      idCounter: this.state.idCounter + 1,
     }));
   };
   handleRemove = (taskId) => {
