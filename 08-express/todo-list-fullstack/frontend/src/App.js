@@ -22,9 +22,9 @@ const App = () => {
     setTask({ id: 0, text: '' });
     setIdCounter(idCounter + 1);
   };
-  const handleRemove = (taskId) => {
-    setTasks(tasks.filter((el) => el.id !== taskId));
-  };
+  // const handleRemove = (taskId) => {
+  //   setTasks(tasks.filter((el) => el.id !== taskId));
+  // };
 
   return (
     <>
@@ -55,7 +55,7 @@ const App = () => {
             </Form.Row>
           </Form>
 
-          <Overview tasks={tasks} handleRemove={handleRemove} />
+          <Overview />
         </Col>
       </Container>
     </>
