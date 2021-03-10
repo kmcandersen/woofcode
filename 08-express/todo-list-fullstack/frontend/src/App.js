@@ -1,29 +1,26 @@
 // logic - inputs & manage state
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Col, Form, Button, FormControl } from 'react-bootstrap';
 import Header from './components/Header';
 import Overview from './components/Overview';
+import { TasksContext } from './contexts/TasksContext';
+import { TaskContext } from './contexts/TaskContext';
+import { IdCounterContext } from './contexts/IdCounterContext';
 
 const App = () => {
-  const initialTodos = [
-    { id: 1, text: 'Clean Fishtank', completed: false },
-    { id: 2, text: 'Walk Cat', completed: false },
-    { id: 3, text: 'Water Plant', completed: false },
-  ];
-  const [tasks, setTasks] = useState(initialTodos);
-  const [task, setTask] = useState({ id: 0, text: '' });
-  const [idCounter, setidCounter] = useState(0);
+  const { tasks, setTasks } = useContext(TasksContext);
+  const { task, setTask } = useContext(TaskContext);
+  const { idCounter, setIdCounter } = useContext(IdCounterContext);
 
   const handleChange = (event) => {
     setTask({ id: idCounter, text: event.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // form req when state change dep on existing state
     setTasks([...tasks, task]);
     setTask({ id: 0, text: '' });
-    setidCounter(idCounter + 1);
+    setIdCounter(idCounter + 1);
   };
   const handleRemove = (taskId) => {
     setTasks(tasks.filter((el) => el.id !== taskId));
