@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
   try {
-    const todos = await Todo.find();
+    const todos = await Todo.find().sort({ isCompleted: false });
     res.status(200).json(todos);
   } catch (err) {
     res.status(404).json({ message: 'Tasks not found' });
@@ -64,7 +64,9 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const todo = await Todo.findByIdAndRemove(req.params.id);
-    res.status(204).json(todo);
+    console.log(todo);
+    // return removed todo, so it can be filtered out of state; orig 204 = nothing to return
+    res.status(200).json({ data: todo });
   } catch (err) {
     res.status(400).json({ message: err.message });
   }

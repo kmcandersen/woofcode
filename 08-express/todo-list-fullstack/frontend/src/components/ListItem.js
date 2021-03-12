@@ -5,13 +5,14 @@ import { TasksContext } from './../contexts/TasksContext';
 import './../index.css';
 
 const ListItem = ({ task }) => {
-  //   const { tasks, setTasks } = useContext(TasksContext);
-  // const handleRemove = (taskId) => {
-  //   setTasks(tasks.filter((el) => el._id !== taskId));
-  // };
+  const { tasks, setTasks } = useContext(TasksContext);
   const handleRemove = async (taskId) => {
-    const removed = await axios.delete(`/todos/${taskId}`);
-    console.log('removed', removed);
+    try {
+      await axios.delete(`/todos/${taskId}`);
+      setTasks(tasks.filter((el) => el._id !== taskId));
+    } catch (err) {
+      console.log(`Error: task not deleted. ${err.message}`);
+    }
   };
 
   //   const handleDone = (taskId) => {

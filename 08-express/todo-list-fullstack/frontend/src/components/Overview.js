@@ -1,6 +1,5 @@
 // display tasks
-import React, { useContext, useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useContext, useEffect } from 'react';
 import { ListGroup, Alert } from 'react-bootstrap';
 import ListItem from './ListItem';
 import { TasksContext } from './../contexts/TasksContext';
