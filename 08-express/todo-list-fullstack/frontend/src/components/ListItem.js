@@ -15,9 +15,22 @@ const ListItem = ({ task }) => {
     }
   };
 
-  //   const handleDone = (taskId) => {
-  //     LIKE UPDATE
-  //   };
+  const handleUpdate = async (taskId, newInfo) => {
+    try {
+      const { data } = await axios.patch(`/todos/${taskId}`, newInfo);
+      // map thru state; if id matches updated task, return it. Else return unchanged task. Replace existing task list with updated list.
+      const updatedTodos = tasks.map((el) => {
+        if (el._id === taskId) {
+          return data;
+        } else {
+          return el;
+        }
+      });
+      setTasks(updatedTodos);
+    } catch (err) {
+      console.log(`Error: task not changed. ${err.message}`);
+    }
+  };
 
   const checkColor = task.isCompleted ? 'green' : 'gray';
   return (
@@ -47,9 +60,9 @@ const ListItem = ({ task }) => {
           className='fas fa-check checkIcon ml-4'
           style={{ color: `${checkColor}` }}
           role='button'
-          // onClick={() => {
-          //   handleDone(task._id);
-          // }}
+          onClick={() => {
+            handleUpdate(task._id, { isCompleted: !task.isCompleted });
+          }}
         ></i>
       </div>
     </ListGroup.Item>

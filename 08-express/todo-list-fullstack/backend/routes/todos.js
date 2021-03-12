@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// NEEDED?
 router.get('/:id', async (req, res) => {
   try {
     const todo = await Todo.findById(req.params.id);
@@ -27,12 +28,12 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// isCompleted added auto
+// isCompleted value added automatically
 router.post('/', async (req, res) => {
   try {
     const todo = await Todo.create({
       task: req.body.task,
-      isCompleted: req.body.isCompleted,
+      isCompleted: false,
     });
     res.status(201).json(todo);
   } catch (err) {
@@ -43,6 +44,7 @@ router.post('/', async (req, res) => {
 // fields wo new data should not change to null
 router.patch('/:id', async (req, res) => {
   try {
+    console.log('req.body', req.body);
     const todo = await Todo.findByIdAndUpdate(
       req.params.id,
       // req.body,
@@ -64,7 +66,6 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     const todo = await Todo.findByIdAndRemove(req.params.id);
-    console.log(todo);
     // return removed todo, so it can be filtered out of state; orig 204 = nothing to return
     res.status(200).json({ data: todo });
   } catch (err) {

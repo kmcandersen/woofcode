@@ -1,24 +1,40 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Col, Form, Button, FormControl } from 'react-bootstrap';
 import Overview from './Overview';
 import { TasksContext } from './../contexts/TasksContext';
-import { TaskContext } from './../contexts/TaskContext';
-import { IdCounterContext } from './../contexts/IdCounterContext';
+// import { TaskContext } from './../contexts/TaskContext';
+//import { IdCounterContext } from './../contexts/IdCounterContext';
 
 const Main = () => {
   const { tasks, setTasks } = useContext(TasksContext);
-  const { task, setTask } = useContext(TaskContext);
-  const { idCounter, setIdCounter } = useContext(IdCounterContext);
+  const [task, setTask] = useState('');
+  // const { task, setTask } = useContext(TaskContext);
+  //const { idCounter, setIdCounter } = useContext(IdCounterContext);
 
   const handleChange = (event) => {
-    setTask({ id: idCounter, text: event.target.value });
+    setTask({ task: event.target.value });
   };
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setTasks([...tasks, task]);
+  //   setTask({ text: '' });
+  //   setIdCounter(idCounter + 1);
+  // };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTasks([...tasks, task]);
-    setTask({ id: 0, text: '' });
-    setIdCounter(idCounter + 1);
+    try {
+      const { data } = await axios.post(`/todos`, task);
+      // add to Context state the new task returned from route
+      console.log(data);
+      setTasks([...tasks, data]);
+      // DOESNT WORK:
+      setTask('');
+    } catch (err) {
+      console.log(`Error: task not added. ${err.message}`);
+    }
   };
 
   return (

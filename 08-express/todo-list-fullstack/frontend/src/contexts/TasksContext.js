@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import axios from 'axios';
+
 export const TasksContext = createContext();
 
 // const initialTodos = [
@@ -10,14 +10,9 @@ export const TasksContext = createContext();
 
 export const TasksProvider = (props) => {
   const [tasks, setTasks] = useState({});
-  const fetchTasks = async () => {
-    const { data } = await axios.get('/todos');
-    console.log(data);
-    setTasks(data);
-  };
 
   return (
-    <TasksContext.Provider value={{ tasks, setTasks, fetchTasks }}>
+    <TasksContext.Provider value={{ tasks, setTasks }}>
       {props.children}
     </TasksContext.Provider>
   );
