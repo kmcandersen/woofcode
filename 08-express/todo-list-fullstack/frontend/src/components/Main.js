@@ -9,7 +9,7 @@ import { TasksContext } from './../contexts/TasksContext';
 
 const Main = () => {
   const { tasks, setTasks } = useContext(TasksContext);
-  const [task, setTask] = useState('');
+  const [task, setTask] = useState({ task: '' });
   // const { task, setTask } = useContext(TaskContext);
   //const { idCounter, setIdCounter } = useContext(IdCounterContext);
 
@@ -28,10 +28,8 @@ const Main = () => {
     try {
       const { data } = await axios.post(`/todos`, task);
       // add to Context state the new task returned from route
-      console.log(data);
       setTasks([...tasks, data]);
-      // DOESNT WORK:
-      setTask('');
+      setTask({ task: '' });
     } catch (err) {
       console.log(`Error: task not added. ${err.message}`);
     }
@@ -51,7 +49,7 @@ const Main = () => {
                 placeholder='New task'
                 aria-label='New task'
                 aria-describedby='basic-addon2'
-                value={task.text}
+                value={task.task}
                 type='text'
                 onChange={handleChange}
               />
