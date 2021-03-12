@@ -1,11 +1,24 @@
 // display tasks
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
 import { ListGroup, Alert } from 'react-bootstrap';
 import ListItem from './ListItem';
 import { TasksContext } from './../contexts/TasksContext';
 
 const Overview = () => {
-  const { tasks } = useContext(TasksContext);
+  const { tasks, fetchTasks } = useContext(TasksContext);
+  //const [tasks, setTasks] = useState({});
+
+  useEffect(() => {
+    // const fetchTasks = async () => {
+    //   const { data } = await axios.get('/todos');
+    //   console.log(data);
+    //   setTasks(data);
+    // };
+    fetchTasks();
+  }, []);
+
+  // option to toggle bw Show All, isCompleted = false
 
   return (
     <div>
@@ -13,7 +26,7 @@ const Overview = () => {
       {tasks.length ? (
         <ListGroup>
           {tasks.map((task) => (
-            <ListItem task={task} />
+            <ListItem task={task} key={task._id} />
           ))}
         </ListGroup>
       ) : (

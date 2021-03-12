@@ -1,0 +1,17 @@
+.penIcon,
+.trashIcon {
+  color: gray;
+}
+
+.trashIcon:hover {
+  color: red;
+}
+
+.penIcon:hover {
+  color: blue;
+}
+
+/* override conditional inline style */
+.checkIcon:hover {
+  color: green !important;
+}
