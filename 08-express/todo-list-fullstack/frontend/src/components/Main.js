@@ -13,8 +13,8 @@ const Main = () => {
   // const { task, setTask } = useContext(TaskContext);
   //const { idCounter, setIdCounter } = useContext(IdCounterContext);
 
-  const handleChange = (event) => {
-    setTask({ task: event.target.value });
+  const handleChange = (e) => {
+    setTask({ task: e.target.value });
   };
   // const handleSubmit = (e) => {
   //   e.preventDefault();

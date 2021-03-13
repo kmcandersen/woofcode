@@ -7,7 +7,6 @@ import { TasksContext } from './../contexts/TasksContext';
 
 const Overview = () => {
   const { tasks, setTasks } = useContext(TasksContext);
-  //const [tasks, setTasks] = useState({});
 
   useEffect(() => {
     const fetchTasks = async () => {
