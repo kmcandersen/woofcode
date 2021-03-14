@@ -19,6 +19,10 @@ const Overview = () => {
   }, [setTasks]);
 
   const calcActiveTasks = (tasks) => tasks.filter((el) => !el.isCompleted);
+
+  const sortTasks = () =>
+    tasks.sort((a, b) => (a.isCompleted > b.isCompleted ? 1 : -1));
+
   const activeTasks = tasks.length && calcActiveTasks(tasks);
 
   return (
@@ -38,7 +42,10 @@ const Overview = () => {
                 value=''
                 id='flexCheck'
                 defaultChecked
-                onClick={() => setShowAll(!showAll)}
+                onClick={() => {
+                  setShowAll(!showAll);
+                  sortTasks();
+                }}
               />
               <label className='form-check-label' htmlFor='flexCheck'>
                 Show completed tasks
