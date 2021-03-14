@@ -12,7 +12,6 @@ const Overview = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       const { data } = await axios.get('/todos');
-      console.log(data);
       setTasks(data);
     };
     fetchTasks();
@@ -23,6 +22,7 @@ const Overview = () => {
   const sortTasks = () =>
     tasks.sort((a, b) => (a.isCompleted > b.isCompleted ? 1 : -1));
 
+  // won't run until tasks fetched from db
   const activeTasks = tasks.length && calcActiveTasks(tasks);
 
   return (
@@ -67,7 +67,7 @@ const Overview = () => {
           </ListGroup>
         </>
       ) : (
-        <Alert variant='info'>Add a task!</Alert>
+        <Alert variant='info'>Add your first task!</Alert>
       )}
     </div>
   );
