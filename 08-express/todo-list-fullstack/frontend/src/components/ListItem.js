@@ -6,12 +6,13 @@ import './../index.css';
 
 const ListItem = ({ task }) => {
   const { tasks, setTasks } = useContext(TasksContext);
-  const [updatedTask, setUpdatedTask] = useState({ task: '' });
+  // removed unnec object: useState({ task: '' }), & where setInputText is used below
+  const [inputText, setInputText] = useState(task.task);
   const [isEditing, setIsEditing] = useState(false);
 
   // UPDATE task input field
   const handleChange = (e) => {
-    setUpdatedTask({ task: e.target.value });
+    setInputText(e.target.value);
   };
 
   // toggle isCompleted, change task
@@ -85,11 +86,11 @@ const ListItem = ({ task }) => {
     return (
       <ListGroup.Item action className='d-flex justify-content-between'>
         <Form
-          //   className='mt-4 mb-5'
           style={{ width: '100%' }}
           onSubmit={(e) => {
-            handleUpdate(e, task._id, updatedTask);
-            setUpdatedTask({ task: '' });
+            // obj arg formerly 'updatedTask'
+            handleUpdate(e, task._id, { task: inputText });
+            setInputText('');
             setIsEditing(false);
           }}
         >
@@ -98,17 +99,12 @@ const ListItem = ({ task }) => {
               <FormControl
                 placeholder={task.task}
                 aria-label='Edit task'
-                aria-describedby='basic-addon2'
-                value={updatedTask.task}
+                // so current value editable in the form
+                value={inputText}
                 type='text'
                 onChange={handleChange}
               />
             </Col>
-            {/* <Col md={2}>
-              <Button variant='warning' type='submit' block>
-                Add
-              </Button>
-            </Col> */}
           </Form.Row>
         </Form>
 
