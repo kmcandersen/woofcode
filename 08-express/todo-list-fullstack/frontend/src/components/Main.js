@@ -4,24 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Col, Form, Button, FormControl } from 'react-bootstrap';
 import Overview from './Overview';
 import { TasksContext } from './../contexts/TasksContext';
-// import { TaskContext } from './../contexts/TaskContext';
-//import { IdCounterContext } from './../contexts/IdCounterContext';
 
 const Main = () => {
   const { tasks, setTasks } = useContext(TasksContext);
   const [task, setTask] = useState({ task: '' });
-  // const { task, setTask } = useContext(TaskContext);
-  //const { idCounter, setIdCounter } = useContext(IdCounterContext);
 
   const handleChange = (e) => {
     setTask({ task: e.target.value });
   };
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setTasks([...tasks, task]);
-  //   setTask({ text: '' });
-  //   setIdCounter(idCounter + 1);
-  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,7 +29,7 @@ const Main = () => {
     <Container className='d-flex justify-content-center'>
       <Col md={8}>
         <Form
-          className='mt-4 mb-5'
+          className='mt-4'
           style={{ paddingTop: '56px' }}
           onSubmit={handleSubmit}
         >
