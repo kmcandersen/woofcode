@@ -54,6 +54,7 @@ const ListItem = ({ task }) => {
               <i
                 className='fas fa-trash trashIcon'
                 role='button'
+                title='Delete Task'
                 onClick={() => {
                   handleRemove(task._id);
                 }}
@@ -61,6 +62,7 @@ const ListItem = ({ task }) => {
               <i
                 className='fas fa-pen penIcon ml-4'
                 role='button'
+                title='Edit Task'
                 onClick={() => {
                   setIsEditing(true);
                 }}
@@ -71,6 +73,7 @@ const ListItem = ({ task }) => {
             className='fas fa-check checkIcon ml-4'
             style={{ color: `${checkColor}` }}
             role='button'
+            title='Mark Completed'
             onClick={(e) =>
               handleUpdate(e, task._id, { isCompleted: !task.isCompleted })
             }

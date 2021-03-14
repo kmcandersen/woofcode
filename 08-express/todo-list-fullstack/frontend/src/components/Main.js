@@ -45,7 +45,7 @@ const Main = () => {
               />
             </Col>
             <Col md={2}>
-              <Button variant='warning' type='submit' block>
+              <Button variant='warning' type='submit' title='Add Task' block>
                 Add
               </Button>
             </Col>
