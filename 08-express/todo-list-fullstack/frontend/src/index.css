@@ -3,7 +3,8 @@
   color: gray;
 }
 
-.trashIcon:hover {
+.trashIcon:hover,
+.closeIcon:hover {
   color: red;
 }
 
@@ -14,4 +15,8 @@
 /* override conditional inline style */
 .checkIcon:hover {
   color: green !important;
+}
+
+.list-group-item:hover {
+  background-color: #f8f9fa;
 }
